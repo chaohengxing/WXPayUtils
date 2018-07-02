@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //假装请求了服务器 获取到了所有的数据
+                //假装请求了服务器 获取到了所有的数据,注意参数不能少
                 WXPayUtils.WXPayBuilder builder = new WXPayUtils.WXPayBuilder();
                 builder.setAppId("123")
                         .setPartnerId("56465")
@@ -25,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
                         .setNonceStr("5645")
                         .setTimeStamp("56512")
                         .setSign("54615")
-                        .build().toWXPayNotSign(MainActivity.this,"123");
+                        .build().toWXPayNotSign(MainActivity.this);
             }
         });
         //在客户端签名
         findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //假装请求了服务端信息，并获取了appid、partnerId、prepayId
+                //假装请求了服务端信息，并获取了appid、partnerId、prepayId，注意参数不能少
                 WXPayUtils.WXPayBuilder builder = new WXPayUtils.WXPayBuilder();
                 builder.setAppId("123")
                         .setPartnerId("213")
